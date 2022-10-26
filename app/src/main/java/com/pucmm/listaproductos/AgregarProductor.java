@@ -64,7 +64,7 @@ public class AgregarProductor extends AppCompatActivity {
     public void cleanView(EditText articulo,EditText description, EditText precio){
         articulo.setText("");
         description.setText("");
-        //precio.setText("");
+        precio.setText("");
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

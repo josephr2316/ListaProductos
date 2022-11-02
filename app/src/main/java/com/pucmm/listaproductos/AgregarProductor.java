@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -39,7 +38,7 @@ public class AgregarProductor extends AppCompatActivity {
                 }
                 if (count==0) {
                     MainActivity.list.add(new Producto(articulo.getText().toString(), description.getText().toString(), precio.getText().toString()));
-                    Toast.makeText(AgregarProductor.this, "Articulo guardado excitosamente", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AgregarProductor.this, "Articulo guardado excitosamente", Toast.LENGTH_SHORT).show();
                     cleanView(articulo, description, precio);
 
                 }

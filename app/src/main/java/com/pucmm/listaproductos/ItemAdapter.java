@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,13 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder>
  {
-     private List<Producto> list;
+     private final List<Producto> list;
      public ItemAdapter(List<Producto> list) {this.list = list;}
     @NonNull
     @Override
@@ -44,9 +42,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
              view.getContext().startActivity(sendIntent);
          });
          holder.delete.setOnClickListener(view ->{
+             //list.remove(holder.getAdapterPosition());
+             //notifyItemRemoved(holder.getAdapterPosition());
              list.remove(position);
-             notifyItemRemoved(position);
-             Toast.makeText(view.getContext(), "Articulo borrado excitosamente!",Toast.LENGTH_SHORT).show();
+             notifyDataSetChanged();
+             Toast.makeText(view.getContext(), "Articulo borrado excitosamente!", Toast.LENGTH_SHORT).show();
          });
      }
 
@@ -55,7 +55,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         return list.size();
     }
 
-     public class ItemViewHolder extends RecyclerView.ViewHolder {
+     public static class  ItemViewHolder extends RecyclerView.ViewHolder {
 
          TextView name;
          TextView description;
@@ -71,12 +71,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
              price   = itemView.findViewById(R.id.price_tv);
              delete = itemView.findViewById(R.id.delete_b);
              share = itemView.findViewById(R.id.share_b);
-
-         }
-         public void AddElement (String name,String description, String price ){
-             Producto a = new Producto(name,description,price);
-             list.add(a);
-             notifyDataSetChanged();
 
          }
      }

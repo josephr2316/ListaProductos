@@ -11,14 +11,14 @@
     <LinearLayout
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#2196F3">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#2196F3">
+            android:layout_height="match_parent">
 
 
             <TextView
@@ -64,8 +64,6 @@
                 android:id="@+id/delete_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:insetTop="10dp"
                 android:insetBottom="10dp"
                 app:backgroundTint="#FF9800"
@@ -77,15 +75,12 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/price_tv"
-                app:layout_constraintVertical_bias="0.0"
                 app:shapeAppearanceOverlay="@style/FabShape" />
 
             <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
                 android:id="@+id/share_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:insetTop="10dp"
                 android:insetBottom="10dp"
                 app:backgroundTint="#FF9800"

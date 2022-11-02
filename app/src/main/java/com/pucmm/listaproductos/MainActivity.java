@@ -2,7 +2,6 @@ package com.pucmm.listaproductos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -10,7 +9,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -21,7 +19,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     static List<Producto> list = new ArrayList<>();
-    RecyclerView recyclerView;
+    static RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
